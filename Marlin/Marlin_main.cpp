@@ -6432,6 +6432,7 @@ inline void gcode_M17() {
   #endif
 
   static void filament_change_beep(const int8_t max_beep_count, const bool init=false) {
+    return;
     static millis_t next_buzz = 0;
     static int8_t runout_beep = 0;
 
