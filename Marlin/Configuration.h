@@ -1895,6 +1895,7 @@
 //#define DEACTIVATE_SERVOS_AFTER_MOVE
 
 // TriGorilla FAN2
+#define FAN1_PIN 7
 #define FAN2_PIN 44
 
 #endif // CONFIGURATION_H
