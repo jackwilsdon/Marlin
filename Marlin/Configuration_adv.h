@@ -563,9 +563,9 @@
 
   #if ENABLED(LCD_PROGRESS_BAR)
     // Amount of time (ms) to show the bar
-    #define PROGRESS_BAR_BAR_TIME 2000
+    #define PROGRESS_BAR_BAR_TIME 5000
     // Amount of time (ms) to show the status message
-    #define PROGRESS_BAR_MSG_TIME 3000
+    #define PROGRESS_BAR_MSG_TIME 2000
     // Amount of time (ms) to retain the status message (0=forever)
     #define PROGRESS_MSG_EXPIRE   0
     // Enable this to show messages for MSG_TIME then hide them
