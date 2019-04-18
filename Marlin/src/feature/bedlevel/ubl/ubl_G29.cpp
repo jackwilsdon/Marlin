@@ -731,12 +731,12 @@
     void unified_bed_leveling::probe_entire_mesh(const float &rx, const float &ry, const bool do_ubl_mesh_map, const bool stow_probe, const bool do_furthest) {
       mesh_index_pair location;
 
+      save_ubl_active_state_and_disable();  // No bed level correction so only raw data is obtained
+      DEPLOY_PROBE();
+
       #if HAS_LCD_MENU
         ui.capture();
       #endif
-
-      save_ubl_active_state_and_disable();  // No bed level correction so only raw data is obtained
-      DEPLOY_PROBE();
 
       uint16_t count = GRID_MAX_POINTS;
 
@@ -773,6 +773,7 @@
         SERIAL_FLUSH(); // Prevent host M105 buffer overrun.
       } while (location.x_index >= 0 && --count);
 
+      ui.release();
       STOW_PROBE();
 
       #ifdef Z_AFTER_PROBING
